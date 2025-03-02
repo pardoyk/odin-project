@@ -2,6 +2,7 @@ const choices = ["rock", "paper", "scissors"];
 const rockButton = document.getElementById("rock");
 const paperButton = document.getElementById("paper");
 const scissorsButton = document.getElementById("scissors");
+const resetButton = document.getElementById("reset-btn");
 let humanScore = document.getElementById("humanScore");
 let computerScore = document.getElementById("computerScore");
 let result = document.getElementById("result")
@@ -15,6 +16,7 @@ computerScore.innerText = `Computer Score: ${computerScoreNum}`;
 rockButton.addEventListener("click", () => playGame("rock"));
 paperButton.addEventListener("click", () => playGame("paper"));
 scissorsButton.addEventListener("click", () => playGame("scissors"));
+resetButton.addEventListener("click", () => reset());
 
 function getComputerChoice(){
     return choices[Math.floor(Math.random() * 3)];
@@ -37,10 +39,21 @@ function playGame(userChoice){
                 computerScoreNum++;
                 computerScore.innerText = `Computer Score: ${computerScoreNum}`;
              }
+    checkWinner();
 }
 
 function checkWinner(){
     if (humanScoreNum === 3){
-        result.innerText = "CONGRATULAIONS! Your are the over all winner!";
+        result.innerText = "CONGRATULATIONS!! Your are the overall WINNER!";
+    } else if (computerScoreNum === 3){
+        result.innerText = "You have LOST, maybe next time!";
     }
+}
+
+function reset(){
+    humanScoreNum = 0;
+    computerScoreNum = 0;
+    result.innerText = "";
+    humanScore.innerText = `Your Score: ${humanScoreNum}`;
+    computerScore.innerText = `Computer Score: ${computerScoreNum}`;
 }
