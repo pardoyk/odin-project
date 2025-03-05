@@ -8,21 +8,26 @@
 </head>
 <body>
     <h1>Rock, Papers, Scissors</h1>
-    <p>Choose one of those option:</p>
+    <p class="undertitle">Choose one of those option:</p>
 
-    <p id="humanScore">Your Score: 0</p>
-    <p id="computerScore">Computer Score: 0</p>
+    <div class="main">
+        <div class="score">
+            <p id="humanScore"><span class="bold">Your Score: 0</span></p>
+            <p id="computerScore"><span class="bold"">Computer Score: 0</span></p>
+        </div>
 
-    <div class="buttons">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+        <div class="buttons">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>
+
+        <div class="buttons" id ="restart">
+            <button id="reset-btn">Restart</button>
+        </div>
+
+        <p id="result"></p>
     </div>
-    <div class="button">
-        <button id="reset-btn">Restart</button>
-    </div>
-
-    <p id="result"></p>
 
     <script src="script.js"></script>
 </body>

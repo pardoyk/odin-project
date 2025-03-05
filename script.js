@@ -9,8 +9,8 @@ let result = document.getElementById("result")
 let humanScoreNum = 0;
 let computerScoreNum = 0;
 
-humanScore.innerText = `Your Score: ${humanScoreNum}`;
-computerScore.innerText = `Computer Score: ${computerScoreNum}`;
+humanScore.innerHTML = `<span class="bold">Your Score: ${humanScoreNum}</span>`;
+computerScore.innerHTML = `<span class="bold">Computer Score: ${computerScoreNum}</span>`;
 
 
 rockButton.addEventListener("click", () => playGame("rock"));
@@ -26,18 +26,18 @@ function playGame(userChoice){
     let computerChoice = getComputerChoice();
     
     if(userChoice === computerChoice){
-        result.innerText = `It's a tie! Both of has chossen: ${userChoice}`;
+        result.innerText = `It's a tie! Both of has chossen: ${userChoice}.`;
     }
     else if (userChoice === "rock" && computerChoice === "scissors" || 
              userChoice === "scissors" && computerChoice === "paper" ||
              userChoice === "paper" && computerChoice === "rock") {
-                result.innerText = `You have won this round! You have choosen ${userChoice} and the computer ${computerChoice}`;
+                result.innerText = `You have won this round! You have choosen ${userChoice} and the computer ${computerChoice}.`;
                 humanScoreNum++;
-                humanScore.innerText = `Your Score: ${humanScoreNum}`;
+                humanScore.innerHTML = `<span class="bold">Your Score: ${humanScoreNum}</span>`;
              } else {
-                result.innerText = `You lose this round! You have choosen ${userChoice} and the computer ${computerChoice}`;
+                result.innerText = `You lose this round! You have choosen ${userChoice} and the computer ${computerChoice}.`;
                 computerScoreNum++;
-                computerScore.innerText = `Computer Score: ${computerScoreNum}`;
+                computerScore.innerHTML = `<span class="bold">Computer Score: ${computerScoreNum}</span>`;
              }
     checkWinner();
 }
@@ -54,6 +54,6 @@ function reset(){
     humanScoreNum = 0;
     computerScoreNum = 0;
     result.innerText = "";
-    humanScore.innerText = `Your Score: ${humanScoreNum}`;
-    computerScore.innerText = `Computer Score: ${computerScoreNum}`;
+    humanScore.innerHTML = `<span class="bold">Your Score: ${humanScoreNum}</span>`;
+    computerScore.innerHTML = `<span class="bold">Computer Score: ${computerScoreNum}</span>`;
 }
